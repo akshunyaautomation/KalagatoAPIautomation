@@ -5,9 +5,8 @@
     <classes>
       <class name="TestApi.MyTest">
         <methods>
-          <include name="adminverifyRefreshToken"/>
           <include name="setup"/>
-          <include name="adminUserLogin"/>
+          <include name="userVerifyCreateUser" invocation-numbers="0"/>
         </methods>
       </class> <!-- TestApi.MyTest -->
     </classes>

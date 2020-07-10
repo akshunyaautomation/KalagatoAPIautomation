@@ -6,6 +6,7 @@ import java.text.SimpleDateFormat;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.DateUtil;
+import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
@@ -82,11 +83,11 @@ public class ExcelUtility {
 	public String getCellValueAsString(Cell cell) {
 		String strCellValue = null;
 		if (cell != null) {
-			switch (cell.getCellTypeEnum()) {
-			case Cell.CellType.STRING:
+			switch (cell.getCellType()) {
+			case STRING:
 				strCellValue = cell.toString();
 				break;
-			case Cell.CellType.NUMERIC:
+			case NUMERIC:
 				if (DateUtil.isCellDateFormatted(cell)) {
 					SimpleDateFormat dateFormat = new SimpleDateFormat(
 							"dd/MM/yyyy");
@@ -97,18 +98,30 @@ public class ExcelUtility {
 					strCellValue = new String(longValue.toString());
 				}
 				break;
-			case Cell.CellType.BOOLEAN:
+			case BOOLEAN:
 				strCellValue = new String(new Boolean(
 						cell.getBooleanCellValue()).toString());
 				break;
-			case Cell.CellType.BLANK:
+			case BLANK:
 				strCellValue = "";
 				break;
+			default:
+				break;		
 			}
 		}
 		return strCellValue;
 	}
-	
+	public int findRow(XSSFSheet sheet, String cellContent) {
+		for (Row row : sheet) {
+			for (Cell cell : row) {
+				getCellValueAsString(cell);
+				if (getCellValueAsString(cell).trim().equals(cellContent)) {
+					return row.getRowNum();  
+				}
+			}
+		}               
+		return 0;
+	}
 	
 	}
 

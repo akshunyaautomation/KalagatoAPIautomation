@@ -107,6 +107,16 @@ public class payload {
 				"}";
 	}
 	
+	public static String logErrorBody() {
+		return "{\r\n" + 
+				"    \"errorDetails\": {\r\n" + 
+				"        \"stack\": {\r\n" + 
+				"            \"error\": \"This is first error after reboot\",\r\n" + 
+				"            \"code\": 400\r\n" + 
+				"        }\r\n" + 
+				"    }\r\n" + 
+				"}";
+	}
 
 
 }
