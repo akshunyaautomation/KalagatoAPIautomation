@@ -9,21 +9,24 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 
 import files.payload;
 import io.restassured.path.json.JsonPath;
+import kalagato.TestBase.TestBase;
 import utility.ExcelUtility;
+import utility.FieldValue;
+import utility.HttpStatusCode;
 import utility.Sheets;
 
 public class Login {
 
 	public static String access_Token;
 	public static String refresh_Token;
-	static String fileName = System.getProperty("user.dir") + "\\src\\main\\java\\kalagato\\TestData\\TestData.xlsx"; 
+	static String fileName = System.getProperty("user.dir") + TestBase.prop.getProperty("fileName"); 
 
 	ExcelUtility ExcelUtility= new ExcelUtility();
 
 	public String loginWithUserNamePassword(String username, String password) throws IOException {
 		String loginResponse= given().log().all().header("Content-Type","application/json")
 				.body(payload.loginBody(username, password)).when().post("/api/v1/login").then()
-				.assertThat().statusCode(200).extract().response().asString();
+				.assertThat().statusCode(HttpStatusCode.OK.getCode()).extract().response().asString();
 
 		System.out.println(loginResponse);
 
@@ -38,12 +41,12 @@ public class Login {
 	}
 
 	public String login(String SNo) throws IOException {
-		return loginGenric(SNo, Sheets.ADMIN.getSheetValue());
+		return loginGenric(SNo, Sheets.ADMIN);
 	}
 
-	public String loginGenric(String SNo, String userType) throws IOException {
+	public String loginGenric(String SNo, Sheets userType) throws IOException {
 		System.out.println("SnoUrinalysisTrigger: "+SNo);
-		XSSFSheet sheet =  ExcelUtility.ReadXSSFsheet(fileName,userType);
+		XSSFSheet sheet =  ExcelUtility.ReadXSSFsheet(fileName,userType.getSheetValue());
 		int rowNo = ExcelUtility.findRow(sheet, SNo);
 		int columns = sheet.getRow(0).getPhysicalNumberOfCells();
 		XSSFRow rowIterator = sheet.getRow(0);
@@ -55,12 +58,12 @@ public class Login {
 
 		do{
 
-			String FieldValue=rowIterator.getCell(columnIterator).getStringCellValue();
-			if(FieldValue.contains("username")){
+			String fieldValue=rowIterator.getCell(columnIterator).getStringCellValue();
+			if(fieldValue.contains(FieldValue.USERNAME.getFieldValue())){
 				username=row.getCell(columnIterator).getStringCellValue();			
 			}	
 
-			else if(FieldValue.contains("password")){
+			else if(fieldValue.contains(FieldValue.PASSWORD.getFieldValue())){
 				password=row.getCell(columnIterator).getStringCellValue();
 			}
 			++columnIterator;

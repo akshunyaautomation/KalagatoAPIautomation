@@ -32,6 +32,7 @@ import kalagato.user_segment.GetUserSegment;
 import kalagato.user_segment.GetUserSegments;
 import kalagato.user_segment.UpdateUserSegment;
 import utility.ExcelUtility;
+import utility.HttpStatusCode;
 import utility.Sheets;
 
 public class TestSuite {
@@ -48,58 +49,50 @@ public class TestSuite {
 	DeleteUserSegment DeleteUserSegment;
 	ForgetPasswordRequest ForgetPasswordRequest;
 	ResetPasswordWithEmailLink ResetPasswordWithEmailLink;
-	LogError LogError;
-	ExcelUtility ExcelUtility= new ExcelUtility();
-	static String Flag = "Flag";
-	static String fileName = System.getProperty("user.dir") + "\\src\\main\\java\\kalagato\\TestData\\TestData.xlsx"; 
-
-
-	public TestSuite() {	
-		super();
-	}
+	LogError logError;
 
 	//public static String TESTDATA_SHEET_PATH="C:\\Users\\Akshunya Jugran\\eclipse-workspace\\KalagatoAPI\\src\\main\\java\\kalagato\\TestData\\TestData.xlsx";
 	@DataProvider(name = "DataProviderforTrigger")
 	public Iterator<Object[]> DataProviderforTrigger(Method m) throws IOException {
-		String methodName = m.getName();
-		XSSFSheet sheet = null;
+		TestBase.baseUri();		
+		ExcelUtility excelUtility= new ExcelUtility();
+		XSSFSheet sheet = getSheet(m.getName(), excelUtility); 
 
-
-		if(methodName.contains(Sheets.NONADMIN.getSheetValue())){
-			sheet = ExcelUtility.ReadXSSFsheet(fileName ,Sheets.NONADMIN.getSheetValue());
-		}else if(methodName.contains(Sheets.ADMIN.getSheetValue()) && 
-				!methodName.contains(Sheets.NONADMIN.getSheetValue())){
-			sheet = ExcelUtility.ReadXSSFsheet(fileName,Sheets.ADMIN.getSheetValue());	
-		}else if(methodName.contains(Sheets.USER.getSheetValue())){
-			sheet = ExcelUtility.ReadXSSFsheet(fileName,Sheets.USER.getSheetValue());
-		} 
-
-
-		int count = sheet.getPhysicalNumberOfRows();
-		ArrayList<String> arr = new ArrayList<String>();
 		XSSFRow row;
 		String cellVal;
-		int FlagColno = ExcelUtility.findCol(sheet,Flag);
+		int flagColno = excelUtility.findCol(sheet,TestBase.prop.getProperty("flag"));
 
 		List<Object[]> dataToBeReturned = new ArrayList<Object[]>();
-
-		for (int i = 1; i < count; i++) { 
+		for (int i = 1; i < sheet.getPhysicalNumberOfRows(); i++) { 
 			row = sheet.getRow(i);
-			cellVal = row.getCell(FlagColno).getStringCellValue();
+			cellVal = row.getCell(flagColno).getStringCellValue();
 			if (cellVal.equalsIgnoreCase("Y")) {
-				arr.add(ExcelUtility.getCellValueAsString(row.getCell(0)));
+				dataToBeReturned.add( new Object[] { excelUtility.getCellValueAsString(row.getCell(0)) } );
 			}
 		}
-		for (String userData : arr) {
-			dataToBeReturned.add(new Object[] { userData });
-		}
+		
 		return dataToBeReturned.iterator();
+	}
+
+
+	private XSSFSheet getSheet(String methodName, ExcelUtility excelUtility) throws IOException {
+		String fileName = System.getProperty("user.dir") + TestBase.prop.getProperty("fileName");
+
+		XSSFSheet sheet = null;
+		if(methodName.contains(Sheets.NONADMIN.getSheetValue())){
+			sheet = excelUtility.ReadXSSFsheet(fileName ,Sheets.NONADMIN.getSheetValue());
+		}else if(methodName.contains(Sheets.ADMIN.getSheetValue()) && 
+				!methodName.contains(Sheets.NONADMIN.getSheetValue())){
+			sheet = excelUtility.ReadXSSFsheet(fileName,Sheets.ADMIN.getSheetValue());	
+		}else if(methodName.contains(Sheets.USER.getSheetValue())){
+			sheet = excelUtility.ReadXSSFsheet(fileName,Sheets.USER.getSheetValue());
+		}
+		return sheet;
 	}
 
 
 	@BeforeMethod
 	public void setup() {
-		TestBase.baseUri();
 		Login=new Login();
 		Logout=new Logout();
 		CreateUser = new CreateUser();
@@ -113,7 +106,7 @@ public class TestSuite {
 		DeleteUserSegment = new DeleteUserSegment();
 		ForgetPasswordRequest = new ForgetPasswordRequest();
 		ResetPasswordWithEmailLink = new ResetPasswordWithEmailLink();
-		LogError = new LogError();
+		logError = new LogError();
 
 	}
 
@@ -227,7 +220,7 @@ public class TestSuite {
 		int statusCode = response.getStatusCode();	
 		boolean flag= response.asString().isEmpty();
 		Assert.assertTrue(flag, "get_master_filter is empty");
-		Assert.assertEquals(statusCode, 201);
+		Assert.assertEquals(statusCode, HttpStatusCode.CREATED.getCode());
 	}  
 	//			
 
@@ -238,14 +231,14 @@ public class TestSuite {
 		int statusCode = response.getStatusCode();		
 		boolean flag= response.asString().isEmpty();
 		Assert.assertFalse(flag, "get_master_filter is empty");
-		Assert.assertEquals(statusCode, 401);
+		Assert.assertEquals(statusCode, HttpStatusCode.FORBIDDEN.getCode());
 	}  
 
 	//verify log_error api
 	@Test(enabled=true,priority=13,dataProvider="DataProviderforTrigger")
 	public void adminVerifyLogError(String SNo) throws IOException {
 		String accessToken=Login.login(SNo);
-		LogError.log_error(accessToken);
+		logError.log_error(accessToken);
 	}  	
 
 	@AfterMethod
