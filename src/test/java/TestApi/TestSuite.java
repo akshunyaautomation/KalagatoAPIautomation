@@ -63,8 +63,8 @@ public class TestSuite {
 	public Iterator<Object[]> DataProviderforTrigger(Method m) throws IOException {
 		String methodName = m.getName();
 		XSSFSheet sheet = null;
-		
-		
+
+
 		if(methodName.contains(Sheets.NONADMIN.getSheetValue())){
 			sheet = ExcelUtility.ReadXSSFsheet(fileName ,Sheets.NONADMIN.getSheetValue());
 		}else if(methodName.contains(Sheets.ADMIN.getSheetValue()) && 
@@ -73,7 +73,7 @@ public class TestSuite {
 		}else if(methodName.contains(Sheets.USER.getSheetValue())){
 			sheet = ExcelUtility.ReadXSSFsheet(fileName,Sheets.USER.getSheetValue());
 		} 
-	
+
 
 		int count = sheet.getPhysicalNumberOfRows();
 		ArrayList<String> arr = new ArrayList<String>();

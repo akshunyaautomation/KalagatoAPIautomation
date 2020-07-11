@@ -8,14 +8,12 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 
 import files.payload;
-import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import utility.ExcelUtility;
 import utility.Sheets;
 
 public class CreateUser {
 
-	public String createUserMessage;
 	static String fileName = System.getProperty("user.dir") + "\\src\\main\\java\\kalagato\\TestData\\TestData.xlsx";
 	ExcelUtility ExcelUtility= new ExcelUtility();
 	Login Login = new Login();
@@ -71,8 +69,8 @@ public class CreateUser {
 		return given().log().all().header("Content-Type","application/json").header("Authorization","bearer "+kalagato.userAPI.Login.access_Token)
 				.body(payload.createUserBody(firstname, lastname, email, newpassword))
 				.when().post("/api/v1/users");
-		
-				//.then().assertThat().statusCode(401).extract().response().asString();
+
+		//.then().assertThat().statusCode(401).extract().response().asString();
 
 	}
 }
