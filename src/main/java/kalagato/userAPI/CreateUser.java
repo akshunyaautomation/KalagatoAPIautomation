@@ -26,12 +26,10 @@ public class CreateUser {
 		System.out.println("SnoUrinalysisTrigger: "+SNo);
 		XSSFSheet sheet =  ExcelUtility.ReadXSSFsheet(fileName, UserType.getSheetValue());
 		int rowNo = ExcelUtility.findRow(sheet, SNo);
-		int columns;
-		XSSFRow rowIterator;
-		XSSFRow row;
-		columns = sheet.getRow(0).getPhysicalNumberOfCells();
-		rowIterator = sheet.getRow(0);
-		row = sheet.getRow(rowNo);
+		int columns = sheet.getRow(0).getPhysicalNumberOfCells();
+		XSSFRow rowIterator = sheet.getRow(0);
+		XSSFRow row = sheet.getRow(rowNo);
+		
 		int columnIterator=1;
 		String firstname = null;
 		String lastname = null;
