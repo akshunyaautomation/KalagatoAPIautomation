@@ -2,6 +2,9 @@ package kalagato.master_filter;
 
 
 import static io.restassured.RestAssured.*;
+
+import kalagato.TestBase.TestBase;
+import utility.HttpStatusCode;
 public class GetMasterFilter {
 	
 	public String getMasterFilterResponse;
@@ -11,8 +14,8 @@ public class GetMasterFilter {
 	
 		
 	 getMasterFilterResponse=given().log().all().header("Authorization","bearer "+accessToken)
-		.when().get("/api/v1/master-filter")
-		.then().assertThat().statusCode(200).extract().response().asString();
+		.when().get(TestBase.prop.getProperty("getMasterURI"))
+		.then().assertThat().statusCode(HttpStatusCode.OK.getCode()).extract().response().asString();
 		
 		System.out.print(getMasterFilterResponse);
 		

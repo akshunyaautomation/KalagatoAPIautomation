@@ -68,7 +68,7 @@ public class CreateUser {
 
 		return given().log().all().header("Content-Type","application/json").header("Authorization","bearer "+kalagato.userAPI.Login.access_Token)
 				.body(payload.createUserBody(firstName, lastName, email, newPassword))
-				.when().post("/api/v1/users");
+				.when().post(TestBase.prop.getProperty("createUserURI"));
 
 		//.then().assertThat().statusCode(401).extract().response().asString();
 

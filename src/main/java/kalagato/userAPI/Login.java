@@ -25,7 +25,7 @@ public class Login {
 
 	public String loginWithUserNamePassword(String username, String password) throws IOException {
 		String loginResponse= given().log().all().header("Content-Type","application/json")
-				.body(payload.loginBody(username, password)).when().post("/api/v1/login").then()
+				.body(payload.loginBody(username, password)).when().post(TestBase.prop.getProperty("loginURI")).then()
 				.assertThat().statusCode(HttpStatusCode.OK.getCode()).extract().response().asString();
 
 		System.out.println(loginResponse);

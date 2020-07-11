@@ -3,6 +3,8 @@ import static io.restassured.RestAssured.*;
 
 import files.payload;
 import io.restassured.path.json.JsonPath;
+import kalagato.TestBase.TestBase;
+import utility.HttpStatusCode;
 
 public class RefreshToken {
 	
@@ -15,7 +17,7 @@ public class RefreshToken {
 		//Login.login(username, password);
 		
 		refreshTokenResponse=given().log().all().headers("Content-Type","application/json").body(payload.refreshTokenBody(kalagato.userAPI.Login.refresh_Token))
-		.when().post("/api/v1/login").then().assertThat().statusCode(200).extract().response().asString();
+		.when().post(TestBase.prop.getProperty("loginURI")).then().assertThat().statusCode(HttpStatusCode.OK.getCode()).extract().response().asString();
 		
 		System.out.print(refreshTokenResponse);
 		

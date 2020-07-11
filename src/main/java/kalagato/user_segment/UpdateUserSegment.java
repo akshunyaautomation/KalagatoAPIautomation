@@ -3,6 +3,8 @@ package kalagato.user_segment;
 import static io.restassured.RestAssured.*;
 
 import files.payload;
+import kalagato.TestBase.TestBase;
+import utility.HttpStatusCode;
 
 public class UpdateUserSegment {
 	
@@ -12,8 +14,8 @@ public String updateUserSegmentResponse;
 		
 		updateUserSegmentResponse=given().log().all().header("Authorization","bearer "+accessToken).header("Content-Type","application/json")
 				.body(payload.updateUserSegmentBody())
-				.when().put("/api/v1/user-segments/13").then()
-				.assertThat().statusCode(204).extract().response().asString();
+				.when().put(TestBase.prop.getProperty("updateUserSegmentURI")).then()
+				.assertThat().statusCode(HttpStatusCode.NO_CONTENT.getCode()).extract().response().asString();
 
 }
 }

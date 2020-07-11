@@ -3,6 +3,7 @@ package kalagato.user_segment;
 import static io.restassured.RestAssured.*;
 
 import files.payload;
+import utility.HttpStatusCode;
 
 public class CreateUserSegment {
 	
@@ -13,7 +14,7 @@ public class CreateUserSegment {
 		createUserSegmentResponse=given().log().all().header("Authorization","bearer "+accessToken).header("Content-Type","application/json")
 				.body(payload.createUserSegmentBody())
 				.when().post("/api/v1/user-segments").then()
-				.assertThat().statusCode(201).extract().response().asString();
+				.assertThat().statusCode(HttpStatusCode.CREATED.getCode()).extract().response().asString();
 
 		
 	}

@@ -38,23 +38,14 @@ import utility.Sheets;
 public class TestSuite {
 	Login Login;
 	Logout Logout;
-	CreateUser CreateUser;
-	GetMasterFilter GetMasterFilter;
-	RefreshToken RefreshToken;
-	GetUserSegments GetUserSegments;
-	GetUserSegment GetUserSegment;
-	CreateUserSegment CreateUserSegment;
-	ChangePasswordFromApp ChangePasswordFromApp;
-	UpdateUserSegment UpdateUserSegment;
-	DeleteUserSegment DeleteUserSegment;
-	ForgetPasswordRequest ForgetPasswordRequest;
-	ResetPasswordWithEmailLink ResetPasswordWithEmailLink;
-	LogError logError;
 
+	TestSuite(){
+		TestBase.baseUri();
+	}
+	
 	//public static String TESTDATA_SHEET_PATH="C:\\Users\\Akshunya Jugran\\eclipse-workspace\\KalagatoAPI\\src\\main\\java\\kalagato\\TestData\\TestData.xlsx";
 	@DataProvider(name = "DataProviderforTrigger")
-	public Iterator<Object[]> DataProviderforTrigger(Method m) throws IOException {
-		TestBase.baseUri();		
+	public Iterator<Object[]> DataProviderforTrigger(Method m) throws IOException {			
 		ExcelUtility excelUtility= new ExcelUtility();
 		XSSFSheet sheet = getSheet(m.getName(), excelUtility); 
 
@@ -77,7 +68,6 @@ public class TestSuite {
 
 	private XSSFSheet getSheet(String methodName, ExcelUtility excelUtility) throws IOException {
 		String fileName = System.getProperty("user.dir") + TestBase.prop.getProperty("fileName");
-
 		XSSFSheet sheet = null;
 		if(methodName.contains(Sheets.NONADMIN.getSheetValue())){
 			sheet = excelUtility.ReadXSSFsheet(fileName ,Sheets.NONADMIN.getSheetValue());
@@ -93,21 +83,13 @@ public class TestSuite {
 
 	@BeforeMethod
 	public void setup() {
-		Login=new Login();
+		Login=new Login();		
+	}
+	
+	@AfterMethod
+	public void UserLogout(){
 		Logout=new Logout();
-		CreateUser = new CreateUser();
-		GetMasterFilter= new GetMasterFilter();
-		RefreshToken = new RefreshToken();
-		GetUserSegments = new GetUserSegments();
-		GetUserSegment = new GetUserSegment();
-		CreateUserSegment = new CreateUserSegment();
-		ChangePasswordFromApp = new ChangePasswordFromApp();
-		UpdateUserSegment = new UpdateUserSegment();
-		DeleteUserSegment = new DeleteUserSegment();
-		ForgetPasswordRequest = new ForgetPasswordRequest();
-		ResetPasswordWithEmailLink = new ResetPasswordWithEmailLink();
-		logError = new LogError();
-
+		Logout.logout();
 	}
 
 	//Verify login & Logout is working as expected
@@ -122,8 +104,9 @@ public class TestSuite {
 	@Test(enabled=true,priority=2,dataProvider="DataProviderforTrigger")
 	public void adminVerifyRefreshToken(String SNo) throws IOException {
 		Login.login(SNo);
-		RefreshToken.refreshToken(kalagato.userAPI.Login.refresh_Token);
-		boolean flag= RefreshToken.refreshTokenResponse.isEmpty();
+		RefreshToken refreshToken = new RefreshToken();
+		refreshToken.refreshToken(kalagato.userAPI.Login.refresh_Token);
+		boolean flag= refreshToken.refreshTokenResponse.isEmpty();
 		Assert.assertFalse(flag, "refresh_Token is empty");
 	} 
 
@@ -133,8 +116,9 @@ public class TestSuite {
 	@Test(enabled=true,priority=3,dataProvider="DataProviderforTrigger")
 	public void adminVerifyGetMasterFilter(String SNo) throws IOException {
 		String accessToken=Login.login(SNo);
-		GetMasterFilter.get_master_filter(accessToken);
-		boolean flag= GetMasterFilter.getMasterFilterResponse.isEmpty();
+		GetMasterFilter getMasterFilter= new GetMasterFilter();
+		getMasterFilter.get_master_filter(accessToken);
+		boolean flag= getMasterFilter.getMasterFilterResponse.isEmpty();
 		Assert.assertFalse(flag, "get_master_filter is empty");
 	} 
 
@@ -143,8 +127,9 @@ public class TestSuite {
 	@Test(enabled=true,priority=4,dataProvider="DataProviderforTrigger")
 	public void adminVerifyGetUserSegments(String SNo) throws IOException {
 		String accessToken=Login.login(SNo);
-		GetUserSegments.get_user_segments(accessToken);
-		boolean flag= GetUserSegments.getUserSegmentsResponse.isEmpty();
+		GetUserSegments getUserSegments = new GetUserSegments();
+		getUserSegments.get_user_segments(accessToken);
+		boolean flag= getUserSegments.getUserSegmentsResponse.isEmpty();
 		Assert.assertFalse(flag, "get_user_segments is empty");
 	} 
 
@@ -153,8 +138,9 @@ public class TestSuite {
 	@Test(enabled=true,priority=5,dataProvider="DataProviderforTrigger")
 	public void adminVerifyGetUserSegment(String SNo) throws IOException {
 		String accessToken=Login.login(SNo);
-		GetUserSegment.get_user_segment(accessToken);
-		boolean flag= GetUserSegment.getUserSegmentResponse.isEmpty();
+		GetUserSegment getUserSegment= new GetUserSegment();
+		getUserSegment.get_user_segment(accessToken);
+		boolean flag= getUserSegment.getUserSegmentResponse.isEmpty();
 		Assert.assertFalse(flag, "get_user_segment is empty");
 	} 
 
@@ -164,7 +150,8 @@ public class TestSuite {
 	@Test(enabled=true,priority=6,dataProvider="DataProviderforTrigger")
 	public void adminVerifyCreateUserSegment(String SNo) throws IOException {
 		String accessToken=Login.login(SNo);
-		CreateUserSegment.create_user_segment(accessToken);
+		CreateUserSegment createUserSegment= new CreateUserSegment();
+		createUserSegment.create_user_segment(accessToken);
 	} 
 
 
@@ -173,7 +160,8 @@ public class TestSuite {
 	@Test(enabled=true,priority=7,dataProvider="DataProviderforTrigger")
 	public void adminVerifyUpdateUserSegment(String SNo) throws IOException {
 		String accessToken=Login.login(SNo);
-		UpdateUserSegment.update_user_segment(accessToken);
+		UpdateUserSegment updateUserSegment= new UpdateUserSegment();
+		updateUserSegment.update_user_segment(accessToken);
 	} 
 
 	//Verify delete_user_segment api is working as expected 
@@ -181,7 +169,8 @@ public class TestSuite {
 	@Test(enabled=true,priority=8,dataProvider="DataProviderforTrigger")
 	public void adminVerifyDeleteUserSegment(String SNo) throws IOException {
 		String accessToken=Login.login(SNo);
-		CreateUserSegment.create_user_segment(accessToken);
+		CreateUserSegment createUserSegment= new CreateUserSegment();
+		createUserSegment.create_user_segment(accessToken);
 		//DeleteUserSegment.delete_user_segment(accessToken);
 	} 
 
@@ -190,8 +179,9 @@ public class TestSuite {
 	@Test(enabled=true,priority=9,dataProvider="DataProviderforTrigger")
 	public void adminVerifyChangePasswordFromApp(String SNo) throws IOException {
 		Login.login(SNo);
-		ChangePasswordFromApp.change_password_from_app();
-		Assert.assertEquals(kalagato.userAPI.ChangePasswordFromApp.changePasswordFromAppMessage, "Your password has been changed successfully!", "Message not correct");
+		ChangePasswordFromApp changePasswordFromApp= new ChangePasswordFromApp();
+		changePasswordFromApp.change_password_from_app();
+		Assert.assertEquals(changePasswordFromApp.changePasswordFromAppMessage, "Your password has been changed successfully!", "Message not correct");
 	} 
 
 	//Verify that forgot_password_request api is working
@@ -199,8 +189,9 @@ public class TestSuite {
 	@Test(enabled=true,priority=10,dataProvider="DataProviderforTrigger")
 	public void adminVerifyForgetPasswordRequest(String SNo) throws IOException {
 		Login.login(SNo);
-		ForgetPasswordRequest.forget_password_request();
-		Assert.assertEquals(kalagato.userAPI.ForgetPasswordRequest.forgetPasswordRequestMessage, "Reset password link has been sent to your email!", "Message not correct");
+		ForgetPasswordRequest forgetPasswordRequest= new ForgetPasswordRequest();
+		forgetPasswordRequest.forget_password_request();
+		Assert.assertEquals(forgetPasswordRequest.forgetPasswordRequestMessage, "Reset password link has been sent to your email!", "Message not correct");
 	}  
 
 	//Verify that reset+password_with_email_link api is working
@@ -208,15 +199,16 @@ public class TestSuite {
 	@Test(enabled=false,priority=11,dataProvider="DataProviderforTrigger")
 	public void adminVerifyResetPasswordWithEmailLink(String SNo) throws IOException {
 		Login.login(SNo);
-		ResetPasswordWithEmailLink.reset_password_with_email_link();
-
-		Assert.assertEquals(kalagato.userAPI.ResetPasswordWithEmailLink.resetPasswordWithEmailLinkMessage, "New password was successfully updated.", "Message not correct");
+		ResetPasswordWithEmailLink resetPasswordWithEmailLink= new ResetPasswordWithEmailLink();
+		resetPasswordWithEmailLink.reset_password_with_email_link();
+		Assert.assertEquals(resetPasswordWithEmailLink.resetPasswordWithEmailLinkMessage, "New password was successfully updated.", "Message not correct");
 	}  
 
 	//verify create user api
 	@Test(enabled=true,priority=12,dataProvider="DataProviderforTrigger")
 	public void userVerifyCreateUser(String SNo) throws IOException {
-		Response response = CreateUser.createUser(SNo, Sheets.USER);
+		CreateUser _createUser = new CreateUser();
+		Response response = _createUser.createUser(SNo, Sheets.USER);
 		int statusCode = response.getStatusCode();	
 		boolean flag= response.asString().isEmpty();
 		Assert.assertTrue(flag, "get_master_filter is empty");
@@ -227,7 +219,8 @@ public class TestSuite {
 	//Verify User is not created by non-admin
 	@Test(enabled=true,priority=12,dataProvider="DataProviderforTrigger")
 	public void nonadminVerifyCreateUser(String SNo) throws IOException {
-		Response response = CreateUser.createUser(SNo,Sheets.NONADMIN);
+		CreateUser _createUser = new CreateUser();
+		Response response = _createUser.createUser(SNo,Sheets.NONADMIN);
 		int statusCode = response.getStatusCode();		
 		boolean flag= response.asString().isEmpty();
 		Assert.assertFalse(flag, "get_master_filter is empty");
@@ -238,15 +231,8 @@ public class TestSuite {
 	@Test(enabled=true,priority=13,dataProvider="DataProviderforTrigger")
 	public void adminVerifyLogError(String SNo) throws IOException {
 		String accessToken=Login.login(SNo);
+		LogError logError = new LogError();
 		logError.log_error(accessToken);
 	}  	
-
-	@AfterMethod
-	public void UserLogout(){
-		Logout=new Logout();
-		Logout.logout();
-
-	}
-
 
 }
