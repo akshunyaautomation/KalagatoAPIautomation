@@ -3,12 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestApi.MyTest">
+      <class name="TestApi.TestSuite">
         <methods>
-          <include name="setup"/>
           <include name="userVerifyCreateUser" invocation-numbers="0"/>
+          <include name="setup"/>
+          <include name="UserLogout"/>
+          <include name="adminVerifyGetUserSegment" invocation-numbers="0"/>
         </methods>
-      </class> <!-- TestApi.MyTest -->
+      </class> <!-- TestApi.TestSuite -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

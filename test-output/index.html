@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Default_suite">
-              <span class="suite-name border-passed">Default suite</span>
+              <span class="suite-name border-failed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\Akshunya Jugran\AppData\Local\Temp\testng-eclipse-1871892708\testng-customsuite.xml</span>
+                    <span>C:\Users\Akshunya Jugran\AppData\Local\Temp\testng-eclipse-1675779249\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,26 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">11 methods,   11 passed</span>
+                    <span class="method-stats">13 methods, 2 failed,   11 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Default_suite">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="TestApi.TestSuite" hash-for-method="adminVerifyGetUserSegment(1)">adminVerifyGetUserSegment(1)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="TestApi.TestSuite" hash-for-method="userVerifyCreateUser(1)">userVerifyCreateUser(1)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Default_suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -132,11 +151,6 @@
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="TestApi.TestSuite" hash-for-method="adminVerifyGetUserSegment(1)">adminVerifyGetUserSegment(1)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="TestApi.TestSuite" hash-for-method="adminVerifyGetUserSegments(1)">adminVerifyGetUserSegments(1)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
@@ -155,6 +169,11 @@
                         <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="TestApi.TestSuite" hash-for-method="adminVerifyUpdateUserSegment(1)">adminVerifyUpdateUserSegment(1)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="TestApi.TestSuite" hash-for-method="nonadminVerifyCreateUser(1)">nonadminVerifyCreateUser(1)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
                   </li>
                 </ul>
@@ -167,6 +186,136 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
+          <div class="suite-Default_suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">TestApi.TestSuite</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="adminVerifyGetUserSegment(1)">
+                  </a> <!-- adminVerifyGetUserSegment(1) -->
+                  <span class="method-name">adminVerifyGetUserSegment</span>
+                  <span class="parameters">(1)</span>
+                  <div class="stack-trace">java.lang.AssertionError: 1 expectation failed.
+Expected status code &lt;200&gt; but was &lt;404&gt;.
+
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:72)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:59)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:59)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:193)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:61)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:126)
+	at io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:134)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
+	at io.restassured.internal.ValidatableResponseImpl.super$2$statusCode(ValidatableResponseImpl.groovy)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1262)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)
+	at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy:142)
+	at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy)
+	at kalagato.user_segment.GetUserSegment.get_user_segment(GetUserSegment.java:11)
+	at TestApi.TestSuite.adminVerifyGetUserSegment(TestSuite.java:161)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at org.testng.TestRunner.privateRun(TestRunner.java:766)
+	at org.testng.TestRunner.run(TestRunner.java:587)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+	at org.testng.TestNG.runSuites(TestNG.java:1039)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="userVerifyCreateUser(1)">
+                  </a> <!-- userVerifyCreateUser(1) -->
+                  <span class="method-name">userVerifyCreateUser</span>
+                  <span class="parameters">(1)</span>
+                  <div class="stack-trace">java.lang.AssertionError: get_master_filter is empty expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:97)
+	at org.testng.Assert.failNotEquals(Assert.java:969)
+	at org.testng.Assert.assertTrue(Assert.java:43)
+	at TestApi.TestSuite.userVerifyCreateUser(TestSuite.java:227)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at org.testng.TestRunner.privateRun(TestRunner.java:766)
+	at org.testng.TestRunner.run(TestRunner.java:587)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+	at org.testng.TestNG.runSuites(TestNG.java:1039)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-failed -->
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -223,14 +372,6 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="adminVerifyGetUserSegment(1)">
-                  </a> <!-- adminVerifyGetUserSegment(1) -->
-                  <span class="method-name">adminVerifyGetUserSegment</span>
-                  <span class="parameters">(1)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
                   <a name="adminVerifyGetUserSegments(1)">
                   </a> <!-- adminVerifyGetUserSegments(1) -->
                   <span class="method-name">adminVerifyGetUserSegments</span>
@@ -261,12 +402,20 @@
                   <span class="parameters">(1)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="nonadminVerifyCreateUser(1)">
+                  </a> <!-- nonadminVerifyCreateUser(1) -->
+                  <span class="method-name">nonadminVerifyCreateUser</span>
+                  <span class="parameters">(1)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Default_suite-class-passed -->
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Akshunya Jugran\AppData\Local\Temp\testng-eclipse-1871892708\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Akshunya Jugran\AppData\Local\Temp\testng-eclipse-1675779249\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -315,51 +464,59 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(11);
+data.addRows(13);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'adminUserLogin')
 data.setCell(0, 2, 'TestApi.TestSuite')
-data.setCell(0, 3, 3021);
+data.setCell(0, 3, 2817);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'adminVerifyRefreshToken')
+data.setCell(1, 1, 'adminVerifyGetMasterFilter')
 data.setCell(1, 2, 'TestApi.TestSuite')
-data.setCell(1, 3, 480);
+data.setCell(1, 3, 430);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'adminVerifyGetMasterFilter')
+data.setCell(2, 1, 'adminVerifyRefreshToken')
 data.setCell(2, 2, 'TestApi.TestSuite')
-data.setCell(2, 3, 400);
+data.setCell(2, 3, 396);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'adminVerifyDeleteUserSegment')
+data.setCell(3, 1, 'adminVerifyChangePasswordFromApp')
 data.setCell(3, 2, 'TestApi.TestSuite')
-data.setCell(3, 3, 389);
+data.setCell(3, 3, 324);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'adminVerifyGetUserSegments')
+data.setCell(4, 1, 'adminVerifyGetUserSegment')
 data.setCell(4, 2, 'TestApi.TestSuite')
-data.setCell(4, 3, 379);
+data.setCell(4, 3, 322);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'adminVerifyGetUserSegment')
+data.setCell(5, 1, 'adminVerifyCreateUserSegment')
 data.setCell(5, 2, 'TestApi.TestSuite')
-data.setCell(5, 3, 342);
+data.setCell(5, 3, 316);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'adminVerifyLogError')
+data.setCell(6, 1, 'adminVerifyForgetPasswordRequest')
 data.setCell(6, 2, 'TestApi.TestSuite')
-data.setCell(6, 3, 335);
+data.setCell(6, 3, 281);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'adminVerifyCreateUserSegment')
+data.setCell(7, 1, 'userVerifyCreateUser')
 data.setCell(7, 2, 'TestApi.TestSuite')
-data.setCell(7, 3, 310);
+data.setCell(7, 3, 277);
 data.setCell(8, 0, 8)
-data.setCell(8, 1, 'adminVerifyForgetPasswordRequest')
+data.setCell(8, 1, 'adminVerifyGetUserSegments')
 data.setCell(8, 2, 'TestApi.TestSuite')
-data.setCell(8, 3, 300);
+data.setCell(8, 3, 265);
 data.setCell(9, 0, 9)
 data.setCell(9, 1, 'adminVerifyUpdateUserSegment')
 data.setCell(9, 2, 'TestApi.TestSuite')
-data.setCell(9, 3, 295);
+data.setCell(9, 3, 254);
 data.setCell(10, 0, 10)
-data.setCell(10, 1, 'adminVerifyChangePasswordFromApp')
+data.setCell(10, 1, 'nonadminVerifyCreateUser')
 data.setCell(10, 2, 'TestApi.TestSuite')
-data.setCell(10, 3, 290);
+data.setCell(10, 3, 254);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'adminVerifyLogError')
+data.setCell(11, 2, 'TestApi.TestSuite')
+data.setCell(11, 3, 252);
+data.setCell(12, 0, 12)
+data.setCell(12, 1, 'adminVerifyDeleteUserSegment')
+data.setCell(12, 2, 'TestApi.TestSuite')
+data.setCell(12, 3, 241);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
@@ -379,14 +536,12 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">2 ignored methods</span>
+            <span class="header-content">1 ignored method</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
               <span class="ignored-class-name">TestApi.TestSuite</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">userVerifyCreateUser</span>
-                <br/>
                 <span class="ignored-method-name">adminVerifyResetPasswordWithEmailLink</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
@@ -406,88 +561,160 @@ return data;
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">adminUserLogin(1)</span>
-                <span class="method-start">569 ms</span>
+                <span class="method-start">655 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">UserLogout</span>
+                <span class="method-start">3477 ms</span>
+              </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">3726 ms</span>
+                <span class="method-start">3741 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">adminVerifyRefreshToken(1)</span>
-                <span class="method-start">3727 ms</span>
+                <span class="method-start">3742 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">UserLogout</span>
+                <span class="method-start">4139 ms</span>
+              </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">4239 ms</span>
+                <span class="method-start">4280 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">adminVerifyGetMasterFilter(1)</span>
-                <span class="method-start">4240 ms</span>
+                <span class="method-start">4280 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">UserLogout</span>
+                <span class="method-start">4713 ms</span>
+              </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">4665 ms</span>
+                <span class="method-start">4855 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">adminVerifyGetUserSegments(1)</span>
-                <span class="method-start">4666 ms</span>
+                <span class="method-start">4855 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">UserLogout</span>
+                <span class="method-start">5125 ms</span>
+              </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">5073 ms</span>
+                <span class="method-start">5261 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">adminVerifyGetUserSegment(1)</span>
-                <span class="method-start">5073 ms</span>
+                <span class="method-start">5262 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">UserLogout</span>
+                <span class="method-start">5592 ms</span>
+              </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">5446 ms</span>
+                <span class="method-start">5727 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">adminVerifyCreateUserSegment(1)</span>
-                <span class="method-start">5446 ms</span>
+                <span class="method-start">5728 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">UserLogout</span>
+                <span class="method-start">6046 ms</span>
+              </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">5779 ms</span>
+                <span class="method-start">6220 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">adminVerifyUpdateUserSegment(1)</span>
-                <span class="method-start">5779 ms</span>
+                <span class="method-start">6221 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">UserLogout</span>
+                <span class="method-start">6476 ms</span>
+              </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">6097 ms</span>
+                <span class="method-start">6658 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">adminVerifyDeleteUserSegment(1)</span>
-                <span class="method-start">6097 ms</span>
+                <span class="method-start">6659 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">UserLogout</span>
+                <span class="method-start">6903 ms</span>
+              </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">6509 ms</span>
+                <span class="method-start">7043 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">adminVerifyChangePasswordFromApp(1)</span>
-                <span class="method-start">6509 ms</span>
+                <span class="method-start">7044 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">UserLogout</span>
+                <span class="method-start">7368 ms</span>
+              </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">6820 ms</span>
+                <span class="method-start">7542 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">adminVerifyForgetPasswordRequest(1)</span>
-                <span class="method-start">6822 ms</span>
+                <span class="method-start">7542 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">UserLogout</span>
+                <span class="method-start">7827 ms</span>
+              </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
-                <span class="method-start">7144 ms</span>
+                <span class="method-start">7987 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">nonadminVerifyCreateUser(1)</span>
+                <span class="method-start">7987 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">UserLogout</span>
+                <span class="method-start">8245 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">8389 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">userVerifyCreateUser(1)</span>
+                <span class="method-start">8390 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">UserLogout</span>
+                <span class="method-start">8668 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">8833 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">adminVerifyLogError(1)</span>
-                <span class="method-start">7145 ms</span>
+                <span class="method-start">8834 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">UserLogout</span>
+                <span class="method-start">9089 ms</span>
+              </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
