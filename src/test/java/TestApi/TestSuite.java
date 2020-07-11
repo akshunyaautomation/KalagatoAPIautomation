@@ -32,6 +32,7 @@ import kalagato.user_segment.GetUserSegment;
 import kalagato.user_segment.GetUserSegments;
 import kalagato.user_segment.UpdateUserSegment;
 import utility.ExcelUtility;
+import utility.Sheets;
 
 public class TestSuite {
 	Login Login;
@@ -49,9 +50,6 @@ public class TestSuite {
 	ResetPasswordWithEmailLink ResetPasswordWithEmailLink;
 	LogError LogError;
 	ExcelUtility ExcelUtility= new ExcelUtility();
-	static String Admin = "admin";
-	static String User = "user";
-	static String NonAdmin = "nonadmin";
 	static String Flag = "Flag";
 	static String fileName = System.getProperty("user.dir") + "\\src\\main\\java\\kalagato\\TestData\\TestData.xlsx"; 
 
@@ -65,13 +63,17 @@ public class TestSuite {
 	public Iterator<Object[]> DataProviderforTrigger(Method m) throws IOException {
 		String methodName = m.getName();
 		XSSFSheet sheet = null;
-		if(methodName.contains(NonAdmin)){
-			sheet = ExcelUtility.ReadXSSFsheet(fileName ,NonAdmin);
-		}else if(methodName.contains(Admin)){
-			sheet = ExcelUtility.ReadXSSFsheet(fileName,Admin);	
-		}else if(methodName.contains(User)){
-			sheet = ExcelUtility.ReadXSSFsheet(fileName,User);
+		
+		
+		if(methodName.contains(Sheets.NONADMIN.getSheetValue())){
+			sheet = ExcelUtility.ReadXSSFsheet(fileName ,Sheets.NONADMIN.getSheetValue());
+		}else if(methodName.contains(Sheets.ADMIN.getSheetValue()) && 
+				!methodName.contains(Sheets.NONADMIN.getSheetValue())){
+			sheet = ExcelUtility.ReadXSSFsheet(fileName,Sheets.ADMIN.getSheetValue());	
+		}else if(methodName.contains(Sheets.USER.getSheetValue())){
+			sheet = ExcelUtility.ReadXSSFsheet(fileName,Sheets.USER.getSheetValue());
 		} 
+	
 
 		int count = sheet.getPhysicalNumberOfRows();
 		ArrayList<String> arr = new ArrayList<String>();
@@ -221,7 +223,7 @@ public class TestSuite {
 	//verify create user api
 	@Test(enabled=true,priority=12,dataProvider="DataProviderforTrigger")
 	public void userVerifyCreateUser(String SNo) throws IOException {
-		Response response = CreateUser.createUser(SNo, User);
+		Response response = CreateUser.createUser(SNo, Sheets.USER);
 		int statusCode = response.getStatusCode();	
 		boolean flag= response.asString().isEmpty();
 		Assert.assertTrue(flag, "get_master_filter is empty");
@@ -232,7 +234,7 @@ public class TestSuite {
 	//Verify User is not created by non-admin
 	@Test(enabled=true,priority=12,dataProvider="DataProviderforTrigger")
 	public void nonadminVerifyCreateUser(String SNo) throws IOException {
-		Response response = CreateUser.createUser(SNo,NonAdmin);
+		Response response = CreateUser.createUser(SNo,Sheets.NONADMIN);
 		int statusCode = response.getStatusCode();		
 		boolean flag= response.asString().isEmpty();
 		Assert.assertFalse(flag, "get_master_filter is empty");

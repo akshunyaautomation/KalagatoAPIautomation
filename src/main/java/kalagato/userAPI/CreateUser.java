@@ -11,6 +11,7 @@ import files.payload;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import utility.ExcelUtility;
+import utility.Sheets;
 
 public class CreateUser {
 
@@ -20,12 +21,12 @@ public class CreateUser {
 	Login Login = new Login();
 
 	public void createUser(String SNo) throws IOException {
-		createUser(SNo, "admin");
+		createUser(SNo, Sheets.ADMIN);
 	}
 
-	public Response createUser(String SNo, String UserType) throws IOException {
+	public Response createUser(String SNo, Sheets UserType) throws IOException {
 		System.out.println("SnoUrinalysisTrigger: "+SNo);
-		XSSFSheet sheet =  ExcelUtility.ReadXSSFsheet(fileName, UserType);
+		XSSFSheet sheet =  ExcelUtility.ReadXSSFsheet(fileName, UserType.getSheetValue());
 		int rowNo = ExcelUtility.findRow(sheet, SNo);
 		int columns;
 		XSSFRow rowIterator;

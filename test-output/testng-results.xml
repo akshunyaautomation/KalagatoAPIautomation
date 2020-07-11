@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="2" ignored="1" total="14" passed="11">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="10239" started-at="2020-07-11T18:31:07 IST" finished-at="2020-07-11T18:31:17 IST">
+  <suite name="Default suite" duration-ms="11303" started-at="2020-07-12T01:25:30 IST" finished-at="2020-07-12T01:25:42 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="10239" started-at="2020-07-11T18:31:07 IST" finished-at="2020-07-11T18:31:17 IST">
+    <test name="Default test" duration-ms="11303" started-at="2020-07-12T01:25:30 IST" finished-at="2020-07-12T01:25:42 IST">
       <class name="TestApi.TestSuite">
-        <test-method status="PASS" signature="setup()[pri:0, instance:TestApi.TestSuite@80503]" name="setup" is-config="true" duration-ms="654" started-at="2020-07-11T18:31:08 IST" finished-at="2020-07-11T18:31:09 IST">
+        <test-method status="PASS" signature="setup()[pri:0, instance:TestApi.TestSuite@80503]" name="setup" is-config="true" duration-ms="631" started-at="2020-07-12T01:25:32 IST" finished-at="2020-07-12T01:25:32 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="adminUserLogin(java.lang.String)[pri:1, instance:TestApi.TestSuite@80503]" name="adminUserLogin" duration-ms="2817" started-at="2020-07-11T18:31:09 IST" data-provider="DataProviderforTrigger" finished-at="2020-07-11T18:31:12 IST">
+        <test-method status="PASS" signature="adminUserLogin(java.lang.String)[pri:1, instance:TestApi.TestSuite@80503]" name="adminUserLogin" duration-ms="2947" started-at="2020-07-12T01:25:32 IST" data-provider="DataProviderforTrigger" finished-at="2020-07-12T01:25:35 IST">
           <params>
             <param index="0">
               <value>
@@ -22,15 +22,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- adminUserLogin -->
-        <test-method status="PASS" signature="UserLogout()[pri:0, instance:TestApi.TestSuite@80503]" name="UserLogout" is-config="true" duration-ms="219" started-at="2020-07-11T18:31:12 IST" finished-at="2020-07-11T18:31:12 IST">
+        <test-method status="PASS" signature="UserLogout()[pri:0, instance:TestApi.TestSuite@80503]" name="UserLogout" is-config="true" duration-ms="238" started-at="2020-07-12T01:25:35 IST" finished-at="2020-07-12T01:25:35 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- UserLogout -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:TestApi.TestSuite@80503]" name="setup" is-config="true" duration-ms="0" started-at="2020-07-11T18:31:12 IST" finished-at="2020-07-11T18:31:12 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="adminVerifyRefreshToken(java.lang.String)[pri:2, instance:TestApi.TestSuite@80503]" name="adminVerifyRefreshToken" duration-ms="396" started-at="2020-07-11T18:31:12 IST" data-provider="DataProviderforTrigger" finished-at="2020-07-11T18:31:12 IST">
+        <test-method status="PASS" signature="adminVerifyRefreshToken(java.lang.String)[pri:2, instance:TestApi.TestSuite@80503]" name="adminVerifyRefreshToken" duration-ms="394" started-at="2020-07-12T01:25:35 IST" data-provider="DataProviderforTrigger" finished-at="2020-07-12T01:25:36 IST">
           <params>
             <param index="0">
               <value>
@@ -41,11 +37,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- adminVerifyRefreshToken -->
-        <test-method status="PASS" signature="UserLogout()[pri:0, instance:TestApi.TestSuite@80503]" name="UserLogout" is-config="true" duration-ms="98" started-at="2020-07-11T18:31:12 IST" finished-at="2020-07-11T18:31:12 IST">
+        <test-method status="PASS" signature="setup()[pri:0, instance:TestApi.TestSuite@80503]" name="setup" is-config="true" duration-ms="0" started-at="2020-07-12T01:25:35 IST" finished-at="2020-07-12T01:25:35 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="UserLogout()[pri:0, instance:TestApi.TestSuite@80503]" name="UserLogout" is-config="true" duration-ms="110" started-at="2020-07-12T01:25:36 IST" finished-at="2020-07-12T01:25:36 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- UserLogout -->
-        <test-method status="PASS" signature="adminVerifyGetMasterFilter(java.lang.String)[pri:3, instance:TestApi.TestSuite@80503]" name="adminVerifyGetMasterFilter" duration-ms="430" started-at="2020-07-11T18:31:12 IST" data-provider="DataProviderforTrigger" finished-at="2020-07-11T18:31:13 IST">
+        <test-method status="PASS" signature="adminVerifyGetMasterFilter(java.lang.String)[pri:3, instance:TestApi.TestSuite@80503]" name="adminVerifyGetMasterFilter" duration-ms="364" started-at="2020-07-12T01:25:36 IST" data-provider="DataProviderforTrigger" finished-at="2020-07-12T01:25:36 IST">
           <params>
             <param index="0">
               <value>
@@ -56,15 +56,19 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- adminVerifyGetMasterFilter -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:TestApi.TestSuite@80503]" name="setup" is-config="true" duration-ms="0" started-at="2020-07-11T18:31:12 IST" finished-at="2020-07-11T18:31:12 IST">
+        <test-method status="PASS" signature="setup()[pri:0, instance:TestApi.TestSuite@80503]" name="setup" is-config="true" duration-ms="0" started-at="2020-07-12T01:25:36 IST" finished-at="2020-07-12T01:25:36 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="UserLogout()[pri:0, instance:TestApi.TestSuite@80503]" name="UserLogout" is-config="true" duration-ms="89" started-at="2020-07-11T18:31:13 IST" finished-at="2020-07-11T18:31:13 IST">
+        <test-method status="PASS" signature="UserLogout()[pri:0, instance:TestApi.TestSuite@80503]" name="UserLogout" is-config="true" duration-ms="91" started-at="2020-07-12T01:25:36 IST" finished-at="2020-07-12T01:25:36 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- UserLogout -->
-        <test-method status="PASS" signature="adminVerifyGetUserSegments(java.lang.String)[pri:4, instance:TestApi.TestSuite@80503]" name="adminVerifyGetUserSegments" duration-ms="265" started-at="2020-07-11T18:31:13 IST" data-provider="DataProviderforTrigger" finished-at="2020-07-11T18:31:13 IST">
+        <test-method status="PASS" signature="setup()[pri:0, instance:TestApi.TestSuite@80503]" name="setup" is-config="true" duration-ms="0" started-at="2020-07-12T01:25:36 IST" finished-at="2020-07-12T01:25:36 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="adminVerifyGetUserSegments(java.lang.String)[pri:4, instance:TestApi.TestSuite@80503]" name="adminVerifyGetUserSegments" duration-ms="314" started-at="2020-07-12T01:25:36 IST" data-provider="DataProviderforTrigger" finished-at="2020-07-12T01:25:37 IST">
           <params>
             <param index="0">
               <value>
@@ -75,19 +79,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- adminVerifyGetUserSegments -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:TestApi.TestSuite@80503]" name="setup" is-config="true" duration-ms="0" started-at="2020-07-11T18:31:13 IST" finished-at="2020-07-11T18:31:13 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="UserLogout()[pri:0, instance:TestApi.TestSuite@80503]" name="UserLogout" is-config="true" duration-ms="107" started-at="2020-07-11T18:31:13 IST" finished-at="2020-07-11T18:31:13 IST">
+        <test-method status="PASS" signature="UserLogout()[pri:0, instance:TestApi.TestSuite@80503]" name="UserLogout" is-config="true" duration-ms="128" started-at="2020-07-12T01:25:37 IST" finished-at="2020-07-12T01:25:37 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- UserLogout -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:TestApi.TestSuite@80503]" name="setup" is-config="true" duration-ms="1" started-at="2020-07-11T18:31:13 IST" finished-at="2020-07-11T18:31:13 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="FAIL" signature="adminVerifyGetUserSegment(java.lang.String)[pri:5, instance:TestApi.TestSuite@80503]" name="adminVerifyGetUserSegment" duration-ms="322" started-at="2020-07-11T18:31:13 IST" data-provider="DataProviderforTrigger" finished-at="2020-07-11T18:31:14 IST">
+        <test-method status="FAIL" signature="adminVerifyGetUserSegment(java.lang.String)[pri:5, instance:TestApi.TestSuite@80503]" name="adminVerifyGetUserSegment" duration-ms="329" started-at="2020-07-12T01:25:37 IST" data-provider="DataProviderforTrigger" finished-at="2020-07-12T01:25:37 IST">
           <params>
             <param index="0">
               <value>
@@ -142,7 +138,7 @@ at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(Script
 at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy:142)
 at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy)
 at kalagato.user_segment.GetUserSegment.get_user_segment(GetUserSegment.java:11)
-at TestApi.TestSuite.adminVerifyGetUserSegment(TestSuite.java:161)
+at TestApi.TestSuite.adminVerifyGetUserSegment(TestSuite.java:163)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -177,15 +173,19 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- adminVerifyGetUserSegment -->
-        <test-method status="PASS" signature="UserLogout()[pri:0, instance:TestApi.TestSuite@80503]" name="UserLogout" is-config="true" duration-ms="98" started-at="2020-07-11T18:31:14 IST" finished-at="2020-07-11T18:31:14 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- UserLogout -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:TestApi.TestSuite@80503]" name="setup" is-config="true" duration-ms="1" started-at="2020-07-11T18:31:14 IST" finished-at="2020-07-11T18:31:14 IST">
+        <test-method status="PASS" signature="setup()[pri:0, instance:TestApi.TestSuite@80503]" name="setup" is-config="true" duration-ms="0" started-at="2020-07-12T01:25:37 IST" finished-at="2020-07-12T01:25:37 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="adminVerifyCreateUserSegment(java.lang.String)[pri:6, instance:TestApi.TestSuite@80503]" name="adminVerifyCreateUserSegment" duration-ms="316" started-at="2020-07-11T18:31:14 IST" data-provider="DataProviderforTrigger" finished-at="2020-07-11T18:31:14 IST">
+        <test-method status="PASS" signature="UserLogout()[pri:0, instance:TestApi.TestSuite@80503]" name="UserLogout" is-config="true" duration-ms="125" started-at="2020-07-12T01:25:37 IST" finished-at="2020-07-12T01:25:37 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UserLogout -->
+        <test-method status="PASS" signature="setup()[pri:0, instance:TestApi.TestSuite@80503]" name="setup" is-config="true" duration-ms="1" started-at="2020-07-12T01:25:37 IST" finished-at="2020-07-12T01:25:37 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="adminVerifyCreateUserSegment(java.lang.String)[pri:6, instance:TestApi.TestSuite@80503]" name="adminVerifyCreateUserSegment" duration-ms="303" started-at="2020-07-12T01:25:37 IST" data-provider="DataProviderforTrigger" finished-at="2020-07-12T01:25:38 IST">
           <params>
             <param index="0">
               <value>
@@ -196,15 +196,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- adminVerifyCreateUserSegment -->
-        <test-method status="PASS" signature="UserLogout()[pri:0, instance:TestApi.TestSuite@80503]" name="UserLogout" is-config="true" duration-ms="103" started-at="2020-07-11T18:31:14 IST" finished-at="2020-07-11T18:31:14 IST">
+        <test-method status="PASS" signature="UserLogout()[pri:0, instance:TestApi.TestSuite@80503]" name="UserLogout" is-config="true" duration-ms="101" started-at="2020-07-12T01:25:38 IST" finished-at="2020-07-12T01:25:38 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- UserLogout -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:TestApi.TestSuite@80503]" name="setup" is-config="true" duration-ms="1" started-at="2020-07-11T18:31:14 IST" finished-at="2020-07-11T18:31:14 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="adminVerifyUpdateUserSegment(java.lang.String)[pri:7, instance:TestApi.TestSuite@80503]" name="adminVerifyUpdateUserSegment" duration-ms="254" started-at="2020-07-11T18:31:14 IST" data-provider="DataProviderforTrigger" finished-at="2020-07-11T18:31:15 IST">
+        <test-method status="PASS" signature="adminVerifyUpdateUserSegment(java.lang.String)[pri:7, instance:TestApi.TestSuite@80503]" name="adminVerifyUpdateUserSegment" duration-ms="287" started-at="2020-07-12T01:25:38 IST" data-provider="DataProviderforTrigger" finished-at="2020-07-12T01:25:38 IST">
           <params>
             <param index="0">
               <value>
@@ -215,15 +211,19 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- adminVerifyUpdateUserSegment -->
-        <test-method status="PASS" signature="UserLogout()[pri:0, instance:TestApi.TestSuite@80503]" name="UserLogout" is-config="true" duration-ms="103" started-at="2020-07-11T18:31:15 IST" finished-at="2020-07-11T18:31:15 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- UserLogout -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:TestApi.TestSuite@80503]" name="setup" is-config="true" duration-ms="1" started-at="2020-07-11T18:31:15 IST" finished-at="2020-07-11T18:31:15 IST">
+        <test-method status="PASS" signature="setup()[pri:0, instance:TestApi.TestSuite@80503]" name="setup" is-config="true" duration-ms="0" started-at="2020-07-12T01:25:38 IST" finished-at="2020-07-12T01:25:38 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="adminVerifyDeleteUserSegment(java.lang.String)[pri:8, instance:TestApi.TestSuite@80503]" name="adminVerifyDeleteUserSegment" duration-ms="241" started-at="2020-07-11T18:31:15 IST" data-provider="DataProviderforTrigger" finished-at="2020-07-11T18:31:15 IST">
+        <test-method status="PASS" signature="UserLogout()[pri:0, instance:TestApi.TestSuite@80503]" name="UserLogout" is-config="true" duration-ms="75" started-at="2020-07-12T01:25:38 IST" finished-at="2020-07-12T01:25:38 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UserLogout -->
+        <test-method status="PASS" signature="setup()[pri:0, instance:TestApi.TestSuite@80503]" name="setup" is-config="true" duration-ms="1" started-at="2020-07-12T01:25:38 IST" finished-at="2020-07-12T01:25:38 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="adminVerifyDeleteUserSegment(java.lang.String)[pri:8, instance:TestApi.TestSuite@80503]" name="adminVerifyDeleteUserSegment" duration-ms="260" started-at="2020-07-12T01:25:38 IST" data-provider="DataProviderforTrigger" finished-at="2020-07-12T01:25:39 IST">
           <params>
             <param index="0">
               <value>
@@ -234,15 +234,15 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- adminVerifyDeleteUserSegment -->
-        <test-method status="PASS" signature="UserLogout()[pri:0, instance:TestApi.TestSuite@80503]" name="UserLogout" is-config="true" duration-ms="118" started-at="2020-07-11T18:31:15 IST" finished-at="2020-07-11T18:31:15 IST">
+        <test-method status="PASS" signature="UserLogout()[pri:0, instance:TestApi.TestSuite@80503]" name="UserLogout" is-config="true" duration-ms="108" started-at="2020-07-12T01:25:39 IST" finished-at="2020-07-12T01:25:39 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- UserLogout -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:TestApi.TestSuite@80503]" name="setup" is-config="true" duration-ms="1" started-at="2020-07-11T18:31:15 IST" finished-at="2020-07-11T18:31:15 IST">
+        <test-method status="PASS" signature="setup()[pri:0, instance:TestApi.TestSuite@80503]" name="setup" is-config="true" duration-ms="1" started-at="2020-07-12T01:25:39 IST" finished-at="2020-07-12T01:25:39 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="adminVerifyChangePasswordFromApp(java.lang.String)[pri:9, instance:TestApi.TestSuite@80503]" name="adminVerifyChangePasswordFromApp" duration-ms="324" started-at="2020-07-11T18:31:15 IST" data-provider="DataProviderforTrigger" finished-at="2020-07-11T18:31:15 IST">
+        <test-method status="PASS" signature="adminVerifyChangePasswordFromApp(java.lang.String)[pri:9, instance:TestApi.TestSuite@80503]" name="adminVerifyChangePasswordFromApp" duration-ms="327" started-at="2020-07-12T01:25:39 IST" data-provider="DataProviderforTrigger" finished-at="2020-07-12T01:25:39 IST">
           <params>
             <param index="0">
               <value>
@@ -253,11 +253,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- adminVerifyChangePasswordFromApp -->
-        <test-method status="PASS" signature="UserLogout()[pri:0, instance:TestApi.TestSuite@80503]" name="UserLogout" is-config="true" duration-ms="97" started-at="2020-07-11T18:31:15 IST" finished-at="2020-07-11T18:31:16 IST">
+        <test-method status="PASS" signature="UserLogout()[pri:0, instance:TestApi.TestSuite@80503]" name="UserLogout" is-config="true" duration-ms="103" started-at="2020-07-12T01:25:39 IST" finished-at="2020-07-12T01:25:39 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- UserLogout -->
-        <test-method status="PASS" signature="adminVerifyForgetPasswordRequest(java.lang.String)[pri:10, instance:TestApi.TestSuite@80503]" name="adminVerifyForgetPasswordRequest" duration-ms="281" started-at="2020-07-11T18:31:16 IST" data-provider="DataProviderforTrigger" finished-at="2020-07-11T18:31:16 IST">
+        <test-method status="PASS" signature="adminVerifyForgetPasswordRequest(java.lang.String)[pri:10, instance:TestApi.TestSuite@80503]" name="adminVerifyForgetPasswordRequest" duration-ms="281" started-at="2020-07-12T01:25:39 IST" data-provider="DataProviderforTrigger" finished-at="2020-07-12T01:25:40 IST">
           <params>
             <param index="0">
               <value>
@@ -268,15 +268,19 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- adminVerifyForgetPasswordRequest -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:TestApi.TestSuite@80503]" name="setup" is-config="true" duration-ms="0" started-at="2020-07-11T18:31:16 IST" finished-at="2020-07-11T18:31:16 IST">
+        <test-method status="PASS" signature="setup()[pri:0, instance:TestApi.TestSuite@80503]" name="setup" is-config="true" duration-ms="0" started-at="2020-07-12T01:25:39 IST" finished-at="2020-07-12T01:25:39 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="UserLogout()[pri:0, instance:TestApi.TestSuite@80503]" name="UserLogout" is-config="true" duration-ms="85" started-at="2020-07-11T18:31:16 IST" finished-at="2020-07-11T18:31:16 IST">
+        <test-method status="PASS" signature="UserLogout()[pri:0, instance:TestApi.TestSuite@80503]" name="UserLogout" is-config="true" duration-ms="79" started-at="2020-07-12T01:25:40 IST" finished-at="2020-07-12T01:25:40 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- UserLogout -->
-        <test-method status="PASS" signature="nonadminVerifyCreateUser(java.lang.String)[pri:12, instance:TestApi.TestSuite@80503]" name="nonadminVerifyCreateUser" duration-ms="254" started-at="2020-07-11T18:31:16 IST" data-provider="DataProviderforTrigger" finished-at="2020-07-11T18:31:16 IST">
+        <test-method status="PASS" signature="setup()[pri:0, instance:TestApi.TestSuite@80503]" name="setup" is-config="true" duration-ms="0" started-at="2020-07-12T01:25:40 IST" finished-at="2020-07-12T01:25:40 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="nonadminVerifyCreateUser(java.lang.String)[pri:12, instance:TestApi.TestSuite@80503]" name="nonadminVerifyCreateUser" duration-ms="374" started-at="2020-07-12T01:25:40 IST" data-provider="DataProviderforTrigger" finished-at="2020-07-12T01:25:40 IST">
           <params>
             <param index="0">
               <value>
@@ -287,19 +291,15 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- nonadminVerifyCreateUser -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:TestApi.TestSuite@80503]" name="setup" is-config="true" duration-ms="0" started-at="2020-07-11T18:31:16 IST" finished-at="2020-07-11T18:31:16 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="UserLogout()[pri:0, instance:TestApi.TestSuite@80503]" name="UserLogout" is-config="true" duration-ms="124" started-at="2020-07-11T18:31:16 IST" finished-at="2020-07-11T18:31:16 IST">
+        <test-method status="PASS" signature="UserLogout()[pri:0, instance:TestApi.TestSuite@80503]" name="UserLogout" is-config="true" duration-ms="428" started-at="2020-07-12T01:25:40 IST" finished-at="2020-07-12T01:25:41 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- UserLogout -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:TestApi.TestSuite@80503]" name="setup" is-config="true" duration-ms="0" started-at="2020-07-11T18:31:16 IST" finished-at="2020-07-11T18:31:16 IST">
+        <test-method status="PASS" signature="setup()[pri:0, instance:TestApi.TestSuite@80503]" name="setup" is-config="true" duration-ms="1" started-at="2020-07-12T01:25:41 IST" finished-at="2020-07-12T01:25:41 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="FAIL" signature="userVerifyCreateUser(java.lang.String)[pri:12, instance:TestApi.TestSuite@80503]" name="userVerifyCreateUser" duration-ms="277" started-at="2020-07-11T18:31:16 IST" data-provider="DataProviderforTrigger" finished-at="2020-07-11T18:31:17 IST">
+        <test-method status="FAIL" signature="userVerifyCreateUser(java.lang.String)[pri:12, instance:TestApi.TestSuite@80503]" name="userVerifyCreateUser" duration-ms="557" started-at="2020-07-12T01:25:41 IST" data-provider="DataProviderforTrigger" finished-at="2020-07-12T01:25:41 IST">
           <params>
             <param index="0">
               <value>
@@ -316,7 +316,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 at org.testng.Assert.fail(Assert.java:97)
 at org.testng.Assert.failNotEquals(Assert.java:969)
 at org.testng.Assert.assertTrue(Assert.java:43)
-at TestApi.TestSuite.userVerifyCreateUser(TestSuite.java:227)
+at TestApi.TestSuite.userVerifyCreateUser(TestSuite.java:229)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -351,15 +351,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- userVerifyCreateUser -->
-        <test-method status="PASS" signature="UserLogout()[pri:0, instance:TestApi.TestSuite@80503]" name="UserLogout" is-config="true" duration-ms="104" started-at="2020-07-11T18:31:17 IST" finished-at="2020-07-11T18:31:17 IST">
+        <test-method status="PASS" signature="UserLogout()[pri:0, instance:TestApi.TestSuite@80503]" name="UserLogout" is-config="true" duration-ms="90" started-at="2020-07-12T01:25:41 IST" finished-at="2020-07-12T01:25:41 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- UserLogout -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:TestApi.TestSuite@80503]" name="setup" is-config="true" duration-ms="1" started-at="2020-07-11T18:31:17 IST" finished-at="2020-07-11T18:31:17 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="adminVerifyLogError(java.lang.String)[pri:13, instance:TestApi.TestSuite@80503]" name="adminVerifyLogError" duration-ms="252" started-at="2020-07-11T18:31:17 IST" data-provider="DataProviderforTrigger" finished-at="2020-07-11T18:31:17 IST">
+        <test-method status="PASS" signature="adminVerifyLogError(java.lang.String)[pri:13, instance:TestApi.TestSuite@80503]" name="adminVerifyLogError" duration-ms="332" started-at="2020-07-12T01:25:41 IST" data-provider="DataProviderforTrigger" finished-at="2020-07-12T01:25:42 IST">
           <params>
             <param index="0">
               <value>
@@ -370,7 +366,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- adminVerifyLogError -->
-        <test-method status="PASS" signature="UserLogout()[pri:0, instance:TestApi.TestSuite@80503]" name="UserLogout" is-config="true" duration-ms="98" started-at="2020-07-11T18:31:17 IST" finished-at="2020-07-11T18:31:17 IST">
+        <test-method status="PASS" signature="setup()[pri:0, instance:TestApi.TestSuite@80503]" name="setup" is-config="true" duration-ms="0" started-at="2020-07-12T01:25:41 IST" finished-at="2020-07-12T01:25:41 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="UserLogout()[pri:0, instance:TestApi.TestSuite@80503]" name="UserLogout" is-config="true" duration-ms="113" started-at="2020-07-12T01:25:42 IST" finished-at="2020-07-12T01:25:42 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- UserLogout -->

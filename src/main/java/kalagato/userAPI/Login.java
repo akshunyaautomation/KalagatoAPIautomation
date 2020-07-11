@@ -10,6 +10,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import files.payload;
 import io.restassured.path.json.JsonPath;
 import utility.ExcelUtility;
+import utility.Sheets;
 
 public class Login {
 
@@ -37,7 +38,7 @@ public class Login {
 	}
 
 	public String login(String SNo) throws IOException {
-		return loginGenric(SNo, "Admin");
+		return loginGenric(SNo, Sheets.ADMIN.getSheetValue());
 	}
 
 	public String loginGenric(String SNo, String userType) throws IOException {
