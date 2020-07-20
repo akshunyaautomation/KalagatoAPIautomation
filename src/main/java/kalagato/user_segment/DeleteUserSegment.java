@@ -12,8 +12,9 @@ public class DeleteUserSegment {
 	public void delete_user_segment(String accessToken) {
 
 		deleteUserSegmentResponse=given().log().all().header("Authorization","bearer "+accessToken).header("Content-Type","application/json")
-				.when().delete(TestBase.prop.getProperty("deleteUserSegmentURI")).then()
-				.assertThat().statusCode(HttpStatusCode.ACCEPTED.getCode()).extract().response().asString();
+				.when().delete(TestBase.prop.getProperty("deleteUserSegmentURI")+GetUserSegments.getUserSegmentsID)
+				.then().assertThat().statusCode(HttpStatusCode.ACCEPTED.getCode())
+				.extract().response().asString();
 
 
 	}

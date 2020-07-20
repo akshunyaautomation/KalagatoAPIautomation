@@ -14,8 +14,9 @@ public String updateUserSegmentResponse;
 		
 		updateUserSegmentResponse=given().log().all().header("Authorization","bearer "+accessToken).header("Content-Type","application/json")
 				.body(payload.updateUserSegmentBody())
-				.when().put(TestBase.prop.getProperty("updateUserSegmentURI")).then()
-				.assertThat().statusCode(HttpStatusCode.NO_CONTENT.getCode()).extract().response().asString();
+				.when().put(TestBase.prop.getProperty("updateUserSegmentURI")+GetUserSegments.getUserSegmentsID)
+				.then().assertThat().statusCode(HttpStatusCode.NO_CONTENT.getCode())
+				.extract().response().asString();
 
 }
 }

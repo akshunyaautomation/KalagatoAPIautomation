@@ -1,30 +1,30 @@
 package files;
 
 public class payload {
-	
+
 	public static String loginBody(String username, String password) {
 		return "{\r\n" + 
 				"	\"user_name\": \""+username+"\",\r\n" + 
 				"	\"password\": \""+password+"\",\r\n" + 
 				"	\"grant_type\": \"password\"\r\n" + 
 				"}";
-		
+
 	}
-	
+
 	public static String logoutBody(String token) {
 		return "{\r\n" + 
 				"	\"refresh_token\":\""+token+"\"\r\n" + 
 				"}";
 	}
-	
+
 	public static String refreshTokenBody(String token) {
-		
+
 		return "{\r\n" + 
 				"	\"refresh_token\":\""+token+"\",\r\n" + 
 				"	\"grant_type\":\"refresh_token\"\r\n" + 
 				"}";
 	}
-	
+
 	public static String createUserBody(String firstname, String lastname, String email,String newpassword) {
 		return "[\r\n" + 
 				"    {\r\n" + 
@@ -35,11 +35,11 @@ public class payload {
 				"    }\r\n" + 
 				"]";
 	}
-	
+
 	public static String createUserSegmentBody() {
 		return "[\r\n" + 
 				"    {\r\n" + 
-				"        \"name\": \"Create By automation\",\r\n" + 
+				"        \"name\": \"Create By automation new\",\r\n" + 
 				"        \"segment\": {\r\n" + 
 				"            \"demography\": [\r\n" + 
 				"                {\r\n" + 
@@ -60,10 +60,10 @@ public class payload {
 				"    }\r\n" + 
 				"]";
 	}
-	
+
 	public static String updateUserSegmentBody() {
 		return "{\r\n" + 
-				"    \"name\": \"Update from automation\",\r\n" + 
+				"    \"name\": \"Update from automation new\",\r\n" + 
 				"    \"segment\": [\r\n" + 
 				"        {\r\n" + 
 				"            \"demography\": [\r\n" + 
@@ -85,7 +85,7 @@ public class payload {
 				"    \"is_selected\": true\r\n" + 
 				"}";
 	}
-	
+
 	public static String changePasswordFromAppBody() {
 		return "{	\r\n" + 
 				"	\"email\":\"akshunya.jugran1@quovantis.com\",\r\n" + 
@@ -93,20 +93,20 @@ public class payload {
 				"	\"newPassword\":\"Kalagato@123\"\r\n" + 
 				"}";
 	}
-	
+
 	public static String forgetPasswordRequestBody() {
 		return "{\r\n" + 
 				"	\"email\": \"deepak.singh@quovantis.com\"\r\n" + 
 				"}";
 	}
-	
+
 
 	public static String resetPasswordWithEmailBody() {
 		return "{	\r\n" + 
 				"	\"password\": \"Kalagato@12345\"\r\n" + 
 				"}";
 	}
-	
+
 	public static String logErrorBody() {
 		return "{\r\n" + 
 				"    \"errorDetails\": {\r\n" + 
